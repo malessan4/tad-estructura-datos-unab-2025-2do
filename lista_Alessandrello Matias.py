@@ -32,9 +32,38 @@ class Lista(object): #Se crea la clase lista, con su puntero inicio en None y su
             print("La lista no esta vacia") 
         return self.inicio is None
     
+    def eliminar(self, dato_a_eliminar): # Metodo para eliminar un nodo de la lista
+        if self.inicio is None: # si la lista esta vacia
+            print("No se encontro el dato en la lista, no se eliminó ningun elemento")
+            return False
+
+        if self.inicio.info == dato_a_eliminar: # si el dato a eliminar es el primero de la lista
+            dato = self.inicio.info
+            self.incio = self.incio.sig
+            self.tamaño -= 1
+            print(f"El dato {dato} a sido eliminado. Tamaño actual: {self.tamaño}")
+            return True
+        
+        anterior = self.inicio
+        actual = self.inicio.sig
+        while (actual is not None) and (actual.info != dato_a_eliminar):
+            anterior = actual
+            actual = actual.sig
+
+        if actual is None:
+            print(f"No se encontro el dato '{dato_a_eliminar}' en la lista")
+            return False
+        else:
+            anterior.sig = actual.sig
+            self.tamaño -= 1
+            print(f"El dato '{dato_a_eliminar}' a sido eliminado. Tamaño actual: {self.tamaño}")
+            return True
+
 lista1 = Lista() # se crea una instancia de la clase lista llamada lista1
 lista1.lista_vacia() # se pregunta si la lista esta vacia
 lista1.insertar(5) # se insertan datos en la lista
 lista1.insertar(3)
 lista1.insertar(8)
+lista1.eliminar(5)
+lista1.eliminar(10) # se intenta eliminar un dato que no existe en la lista
 lista1.lista_vacia() # se pregunta si la lista esta vacia
