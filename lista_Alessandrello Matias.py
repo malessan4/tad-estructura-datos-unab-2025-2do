@@ -22,3 +22,19 @@ class Lista(object): #Se crea la clase lista, con su puntero inicio en None y su
             anterior.sig = nuevo_nodo # salgo del while y mi anterior.sig ahora apunta a mi nuevo nodo
             nuevo_nodo.sig = actual # y mi nuevo nodo.sig apunta a mi actual
         self.tamaño = self.tamaño + 1
+        print(f"El dato {dato} fue insertado correctamente, el tamaño actual de la lista es {self.tamaño}")
+
+
+    def lista_vacia(self): # Metodo para saber si la lista esta vacia
+        if self.inicio is None:
+            print("La lista esta vacia")
+        else:
+            print("La lista no esta vacia") 
+        return self.inicio is None
+    
+lista1 = Lista() # se crea una instancia de la clase lista llamada lista1
+lista1.lista_vacia() # se pregunta si la lista esta vacia
+lista1.insertar(5) # se insertan datos en la lista
+lista1.insertar(3)
+lista1.insertar(8)
+lista1.lista_vacia() # se pregunta si la lista esta vacia
