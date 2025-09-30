@@ -1,16 +1,16 @@
-class Nodo(object):
+class Nodo(object): # se crea la clase nodo, con su informacion en None y el puntero siguiente tambien en Noe
     info = None
     sig = None
 
-class Lista(object):
+class Lista(object): #Se crea la clase lista, con su puntero inicio en None y su tamaño en 0
     def __init__(self):
         self.inicio = None
         self.tamaño = 0
 
-    def insertar(self, dato):
-        nuevo_nodo = Nodo()
-        nuevo_nodo.info = dato
-        if (self.inicio is None) or (self.inicio.info > dato):
+    def insertar(self, dato): # Metodo de Lista para insertar un nodo de forma ordenada de menor a mayor
+        nuevo_nodo = Nodo() # mi nuevo nodo es una instancia nueva de la clase Nodo
+        nuevo_nodo.info = dato # mi nodo.info del nuevo nodo es igual al dato
+        if (self.inicio is None) or (self.inicio.info > dato): # si la lista esta vacía o el dato es menor que el primer elemento
             nuevo_nodo.sig = self.inicio # Primero engancho mi nuevo nodo al inicio actual
             self.inicio = nuevo_nodo # Ahora etiqueto a mi nuevo nodo como inicio
         else: # Si la lista no está vacía y el dato es mayor que el primer elemento
