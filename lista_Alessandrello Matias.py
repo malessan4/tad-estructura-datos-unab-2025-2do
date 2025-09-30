@@ -13,7 +13,7 @@ class Lista(object): #Se crea la clase lista, con su puntero inicio en None y su
         if (self.inicio is None) or (self.inicio.info > dato): # si la lista esta vacía o el dato es menor que el primer elemento
             nuevo_nodo.sig = self.inicio # Primero engancho mi nuevo nodo al inicio actual
             self.inicio = nuevo_nodo # Ahora etiqueto a mi nuevo nodo como inicio
-        else: # Si la lista no está vacía y el dato es mayor que el primer elemento
+        else: # Si la lista no está vacía o el dato es mayor que el primer elemento
             anterior = self.inicio # se crea la variable anterior que apunta al inicio
             actual = self.inicio.sig # se crea la variable actual que apunta al nodo que venia después del inicio
             while (actual is not None) and (actual.info < dato): # si actual es None es porque llegamos al final de la lista
