@@ -37,27 +37,28 @@ class Lista(object): #Se crea la clase lista, con su puntero inicio en None y su
             print("No se encontro el dato en la lista, no se eliminó ningun elemento")
             return False
 
-        if self.inicio.info == dato_a_eliminar: # si el dato a eliminar es el primero de la lista
+        elif self.inicio.info == dato_a_eliminar: # si el dato a eliminar es el primero de la lista
             dato = self.inicio.info
-            self.incio = self.incio.sig
+            self.incio = self.inicio.sig
             self.tamaño -= 1
             print(f"El dato {dato} a sido eliminado. Tamaño actual: {self.tamaño}")
             return True
         
-        anterior = self.inicio
-        actual = self.inicio.sig
-        while (actual is not None) and (actual.info != dato_a_eliminar):
-            anterior = actual
-            actual = actual.sig
-
-        if actual is None:
-            print(f"No se encontro el dato '{dato_a_eliminar}' en la lista")
-            return False
         else:
-            anterior.sig = actual.sig
-            self.tamaño -= 1
-            print(f"El dato '{dato_a_eliminar}' a sido eliminado. Tamaño actual: {self.tamaño}")
-            return True
+            anterior = self.inicio
+            actual = self.inicio.sig
+            while (actual is not None) and (actual.info != dato_a_eliminar):
+                anterior = actual
+                actual = actual.sig
+
+            if actual is None:
+                print(f"No se encontro el dato '{dato_a_eliminar}' en la lista")
+                return False
+            else:
+                anterior.sig = actual.sig
+                self.tamaño -= 1
+                print(f"El dato '{dato_a_eliminar}' a sido eliminado. Tamaño actual: {self.tamaño}")
+                return True
         
     def mostrar_lista(self):
         print()
