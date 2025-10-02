@@ -18,7 +18,7 @@ class TajetaCredito(object):
 
 
     def __str__(self):
-        nro_protegido = '**** **** ***' + self.nro_id[-4:]
+        nro_protegido = '**** **** **' + self.nro_id[-4:]
         return (f"--- Tarjeta de Crédito ---\n"
                 f"Titular: {self.nombre_cliente}\n"
                 f"Número: {nro_protegido}\n"
@@ -32,6 +32,7 @@ class TajetaCredito(object):
         credito_disponible = self.limite_credito - self.saldo_actual
         if precio < credito_disponible:
             self.saldo_actual += precio
+            self.limite_credito -= precio
             print(f"Compra exitosa por el monto de: ${precio}")
             return
         else:
