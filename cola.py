@@ -33,6 +33,20 @@ class Cola(object):
             self.tamanio -= 1
             print(f"El {dato} a sido eliminado de la cola y el tamanio de la cola es {self.tamanio}")
 
+    def mandar_a_lo_ultimo(self):
+        if self.primero is None:
+            print("La cola esta vacia")
+        elif self.primero == self.ultimo:
+            print("Hay un solo dato en la cola, imposible mandarlo a lo ultimo")
+        else:
+            nodo_a_mover = self.primero
+            dato = nodo_a_mover.info
+            self.primero = self.primero.sig
+            self.ultimo.sig = nodo_a_mover
+            self.ultimo = nodo_a_mover
+            nodo_a_mover.sig = None
+            print(f"El {dato} a sido enviado a lo ultimo de la cola")
+
         
 
     def mostrar_cola(self):
@@ -53,9 +67,12 @@ class Cola(object):
 mi_cola = Cola()
 mi_cola.mostrar_cola()
 mi_cola.insertar(5)
+mi_cola.mandar_a_lo_ultimo()
+mi_cola.mostrar_cola()
 mi_cola.insertar(10)
 mi_cola.insertar(2)
 mi_cola.insertar(4)
+mi_cola.mandar_a_lo_ultimo()
 mi_cola.mostrar_cola()
 mi_cola.desencolar()
 mi_cola.mostrar_cola()
