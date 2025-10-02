@@ -22,16 +22,35 @@ class ArbolBinario:
         return nodo
     
     def inorden(self):
-        # Recorrido inorden (izquierda, raíz, derecha)
-        resultado = self._inorden_rec(self.raiz)
-        print(f"Recorrido Inorden {resultado}")
-        return resultado
+        print("El recorrido en inorden es:")
+        self._inorden_rec(self.raiz)
     
     def _inorden_rec(self, nodo):
-        if nodo is None:
-            return []
-        resultado = self._inorden_rec(nodo.izq) + [nodo.dato] + self._inorden_rec(nodo.der)
-        return resultado
+        if nodo is not None:
+            self._inorden_rec(nodo.izq)
+            print(nodo.dato)
+            self._inorden_rec(nodo.der)
+
+    def preorden(self):
+        print("El recorrido en preorden es:")
+        self._preorden_rec(self.raiz)
+    
+    def _preorden_rec(self, nodo):
+        if nodo is not None:
+            print(nodo.dato)
+            self._preorden_rec(nodo.izq)
+            self._preorden_rec(nodo.der)
+
+    def postorden(self):
+        print("El recorrido en postorden es:")
+        self._postorden_rec(self.raiz)
+
+    def _postorden_rec(self, nodo):
+        if nodo is not None:
+            self._postorden_rec(nodo.izq)
+            self._postorden_rec(nodo.der)
+            print(nodo.dato)
+
     
     def mostar_raiz(self):
         print(f"La raiz es: {self.raiz.dato}")
@@ -50,3 +69,6 @@ arbol.insertar(54)
 arbol.insertar(18)
 arbol.mostar_raiz()
 arbol.inorden()
+arbol.preorden()
+arbol.postorden()   
+
