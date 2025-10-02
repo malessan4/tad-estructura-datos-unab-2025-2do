@@ -1,6 +1,7 @@
 class NodoPila(object):
-    info = None
-    sig = None
+    def __init__(self):
+        self.info = None
+        self.sig = None
 
 class Pila(object):
     def __init__(self):

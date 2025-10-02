@@ -1,6 +1,7 @@
 class Nodo(object): # se crea la clase nodo, con su informacion en None y el puntero siguiente tambien en Noe
-    info = None
-    sig = None
+    def __init__(self):
+        self.info = None
+        self.sig = None
 
 class Lista(object): #Se crea la clase lista, con su puntero inicio en None y su tamaño en 0
     def __init__(self):
