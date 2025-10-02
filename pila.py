@@ -15,6 +15,19 @@ class Pila(object):
         self.tamanio += 1
         print(f"Se ingreso correctamente el dato: {nodo.info} a la pila y el tamanio es: {self.tamanio}")
 
+    def desapilar(self,):
+        if self.cima is None:
+            print("La pila esta vacia")
+            return
+        
+        else:
+            dato = self.cima.info
+            self.cima = self.cima.sig
+            self.tamanio -= 1
+            print(f"El dato: {dato} a sido desapilado y su tamanio es: {self.tamanio} ")
+
+        
+
     def mostrar_pila(self):
         if self.cima is None:
             print("La pila esta vacia")
@@ -38,5 +51,7 @@ mi_pila.apilar(43)
 mi_pila.apilar(10)
 mi_pila.apilar(5)
 mi_pila.apilar(300)
+mi_pila.mostrar_pila()
+mi_pila.desapilar()
 mi_pila.mostrar_pila()
 
