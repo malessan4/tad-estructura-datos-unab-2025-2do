@@ -71,6 +71,7 @@ class Lista(object): #Se crea la clase lista, con su puntero inicio en None y su
             print(f"{actual.info}") # Se imprime el dato que tenga el nodo
             actual = actual.sig # y nuestro actual pasa a ser el siguiente
             
+#PROGRAMA PRINCIPAL
 
 lista1 = Lista() # se crea una instancia de la clase lista llamada lista1
 lista1.lista_vacia() # se pregunta si la lista esta vacia
