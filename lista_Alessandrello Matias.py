@@ -58,6 +58,18 @@ class Lista(object): #Se crea la clase lista, con su puntero inicio en None y su
             self.tamaño -= 1
             print(f"El dato '{dato_a_eliminar}' a sido eliminado. Tamaño actual: {self.tamaño}")
             return True
+        
+    def mostrar_lista(self):
+        print()
+        print("Los datos dentro la lista enlazada:")
+        if self.inicio is None: # si la lista esta vacia
+            print("La lista esta vacia")
+            return
+        actual = self.inicio # Si la lista no esta vacia, creo una variable llamada actual que va a ser la cabeza de la lista
+        while actual is not None: # Mientras que actual no sea None
+            print(f"{actual.info}") # Se imprime el dato que tenga el nodo
+            actual = actual.sig # y nuestro actual pasa a ser el siguiente
+            
 
 lista1 = Lista() # se crea una instancia de la clase lista llamada lista1
 lista1.lista_vacia() # se pregunta si la lista esta vacia
@@ -67,3 +79,12 @@ lista1.insertar(8)
 lista1.eliminar(5)
 lista1.eliminar(10) # se intenta eliminar un dato que no existe en la lista
 lista1.lista_vacia() # se pregunta si la lista esta vacia
+lista1.insertar(16)
+lista1.insertar(96)
+lista1.insertar(4353)
+lista1.insertar(12)
+lista1.insertar(65)
+lista1.insertar(34)
+lista1.insertar(22)
+lista1.insertar(4)
+lista1.mostrar_lista()
