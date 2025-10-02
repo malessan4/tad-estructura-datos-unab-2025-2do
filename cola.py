@@ -1,6 +1,8 @@
 class NodoCola(object):
-    info = None
-    sig = None
+    def __init__(self):
+        self.info = None
+        self.sig = None
+
 
 class Cola(object):
     def __init__(self):
@@ -21,7 +23,7 @@ class Cola(object):
             self.ultimo = nuevo_nodo 
             self.tamanio += 1
             print(f"El nodo {dato} ha sido agregado a lo ultimo de la cola y el tamanio de la cola es {self.tamanio}")
-            return
+
         
 
     def mostrar_cola(self):
@@ -44,6 +46,7 @@ mi_cola.mostrar_cola()
 mi_cola.insertar(5)
 mi_cola.insertar(10)
 mi_cola.insertar(2)
+mi_cola.insertar(4)
 mi_cola.mostrar_cola()
 
 
