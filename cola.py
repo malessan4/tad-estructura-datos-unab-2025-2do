@@ -24,6 +24,15 @@ class Cola(object):
             self.tamanio += 1
             print(f"El nodo {dato} ha sido agregado a lo ultimo de la cola y el tamanio de la cola es {self.tamanio}")
 
+    def desencolar(self):
+        if self.primero is None:
+            print("La cola esta vacia")
+        else:
+            dato = self.primero.info
+            self.primero = self.primero.sig
+            self.tamanio -= 1
+            print(f"El {dato} a sido eliminado de la cola y el tamanio de la cola es {self.tamanio}")
+
         
 
     def mostrar_cola(self):
@@ -47,6 +56,12 @@ mi_cola.insertar(5)
 mi_cola.insertar(10)
 mi_cola.insertar(2)
 mi_cola.insertar(4)
+mi_cola.mostrar_cola()
+mi_cola.desencolar()
+mi_cola.mostrar_cola()
+mi_cola.desencolar()
+mi_cola.mostrar_cola()
+mi_cola.desencolar()
 mi_cola.mostrar_cola()
 
 
